@@ -1,0 +1,289 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif; /* Fonte mais próxima ao design */
+}
+
+.fa {
+  margin-right: 5px; /* Espaçamento entre ícones */
+}
+
+.custom-navbar {
+  background-color: #012777;
+  height: 100px; /* Ajuste a altura conforme necessário */
+  position: relative;
+}
+
+.custom-navbar .navbar-brand img.navbar-logo {
+  height: 150px; /* Ajuste a altura conforme necessário */
+  max-height: 100%;
+}
+
+.custom-navbar .navbar-nav {
+  margin-left: 20px; /* Centraliza os itens do menu */
+}
+
+.custom-navbar .nav-link:hover {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container-principal {
+  display: flex;
+  justify-content: space-between; /* Espaço uniforme entre os elementos */
+  width: 98vw;
+}
+
+.providencias h1 {
+  font-size: 30px; /* Tamanho da fonte aumentado */
+  margin-bottom: 10px; /* Espaço entre o título e a lista */
+  margin-top: 3%;
+}
+
+.gerando-peticao h1 {
+  font-size: 30px; /* Tamanho da fonte aumentado */
+  margin-bottom: 10px; /* Espaço entre o título e o conteúdo */
+  margin-top: 1%;
+}
+
+.providencias {
+  color: rgb(0, 0, 0);
+  align-items: center;
+  padding: 10px; /* Reduzido para economizar espaço */
+  margin-bottom: 5px;
+  font-size: 20px; /* Fonte reduzida para economizar espaço */
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.status {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.gerando-peticao {
+  display: flex;
+  padding: 20px 0 20px 20px;
+  border-left: 4px solid black; /* Linha que separa as colunas */
+  margin-bottom: 20px;
+  text-align: center;
+  width: 55%;
+}
+
+.left {
+  width: 70%;
+}
+
+.button-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espaço entre os botões e o botão cancelar */
+  margin-left: 10px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: space-around; /* Espaçamento uniforme entre os botões */
+  width: 100%; /* Utiliza toda a largura disponível */
+  margin-bottom: 20px; /* Espaço entre os botões principais e o botão cancelar */
+}
+
+.button-cancel {
+  width: 100%; /* Alinha o botão Cancelar à largura do contêiner */
+}
+
+.btn {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 10px 15px; /* Ajuste conforme necessário para melhor toque */
+  margin-right: 10px; /* Espaço entre os botões */
+  flex-grow: 1; /* Faz cada botão crescer igualmente */
+}
+
+.btn-cancel {
+  background-color: red; /* Cor destacada para o botão Cancelar */
+  width: 100%; /* Faz o botão Cancelar usar toda a largura */
+}
+
+
+ 
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Coloca os itens em coluna em telas menores */
+  }
+
+  .providencias,
+  .gerando-peticao {
+    width: 100%; /* Faz cada seção ocupar a largura total em telas pequenas */
+  }
+}
+
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column; /* Empilha os botões verticalmente em telas pequenas */
+  }
+  .btn {
+    margin-bottom: 10px; /* Espaço entre os botões quando empilhados */
+  }
+}
+
+.nav-link.active {
+  color: #ff0000; /* Muda a cor para vermelho, ou qualquer cor que destaque */
+  font-weight: bold; /* Opcionalmente, torna o texto em negrito */
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row; /* Altera a direção dos botões para horizontal */
+  justify-content: space-around; /* Distribui os botões uniformemente na coluna */
+  width: 100%; /* Ajusta a largura para preencher a coluna */
+  padding-right: 20px; /* Adiciona espaço no final para evitar sobreposição */
+}
+
+.button-cancel {
+  width: 100%; /* Mantém o botão Cancelar em toda a largura */
+  margin-top: 20px; /* Adiciona espaço acima do botão Cancelar */
+}
+
+.btn {
+  margin-right: 10px; /* Espaçamento entre botões */
+}
+
+/* Media query para dispositivos menores (abaixo de 768px) */
+@media (max-width: 768px) {
+  .navbar .nav-link {
+    width: 100%; /* Botões da navbar ocupam toda a largura para fácil acesso */
+    padding: 8px 10px; /* Padding reduzido para economizar espaço */
+  }
+
+  .navbar-toggler {
+    display: block; /* Assegura que o toggler está visível */
+  }
+
+  .navbar-collapse {
+    text-align: center; /* Centraliza os itens no menu colapsado */
+  }
+
+  .btn {
+    /* Botões gerais, não apenas na navbar */
+    width: 100%; /* Facilita o toque em dispositivos menores */
+    margin-bottom: 10px; /* Mais espaço entre botões */
+  }
+
+  .advogados {
+    /* Específico para a seção de advogados */
+    padding: 20px 0; /* Mais padding vertical */
+  }
+
+  .list-group-item {
+    /* Itens de lista para espaçamento adequado */
+    display: block; /* Stack verticalmente */
+    text-align: center; /* Texto centralizado */
+  }
+}
+
+/* Media query para telas médias e grandes */
+@media (min-width: 768px) {
+  .navbar .nav-link {
+    padding: 10px 20px; /* Maior espaço para interação fácil */
+  }
+
+  .container {
+    max-width: 960px; /* Largura máxima para evitar que a tela fique muito larga */
+    margin: auto; /* Centraliza o contêiner */
+  }
+}
+
+/* Media query para dispositivos com largura máxima de 768px */
+@media (max-width: 991px) {
+  .navbar-brand {
+    position: absolute;
+    left: 50%; /* Posiciona a metade da logo no centro */
+    transform: translateX(
+      -50%
+    ); /* Desloca a logo para trás pela metade de sua largura para centralizar exatamente */
+    display: block; /* Garante que a logo será tratada como bloco para centralização */
+  }
+
+  .navbar-toggler {
+    position: relative;
+  }
+
+  .navbar {
+    text-align: center; /* Centraliza os itens da navbar */
+  }
+
+  .navbar-collapse {
+    justify-content: center; /* Usa flexbox para centralizar os itens do menu quando abertos */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block; /* Certifica-se que o botão de toggle está visível */
+    margin-right: 10px; /* Adiciona margem à direita para balancear o layout */
+  }
+}
+
+/* Media query para dispositivos com largura máxima de 768px */
+@media (max-width: 991px) {
+  .navbar-toggler {
+    float: right; /* Assegura que o botão de toggle esteja à direita */
+  }
+
+  /* Estilização para o fundo preto e a sobreposição somente em modo responsivo */
+  .navbar-collapse.collapsing,
+  .navbar-collapse.show {
+    display: block;
+    position: fixed;
+    top: 56px; /* Altura da navbar */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo preto com transparência */
+    z-index: 1050; /* Certifica que sobreponha outros conteúdos */
+    overflow-y: auto; /* Permite a rolagem se o conteúdo for extenso */
+  }
+
+  .navbar-collapse.collapsing {
+    transition: height 0.35s ease;
+  }
+
+  .navbar-nav {
+    width: 100%; /* Ocupa toda a largura da sobreposição */
+    padding-top: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    color: white; /* Garante que o texto seja legível */
+    padding: 10px 15px; /* Espaçamento adequado */
+    border-bottom: 1px solid #444; /* Divisórias sutis entre itens */
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse.collapsing {
+    position: absolute;
+    width: 100%;
+    top: 100%; /* Ajusta para ficar logo abaixo da navbar */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo preto semi-transparente */
+    z-index: 1050; /* Eleva acima de outros elementos da página */
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column; /* Organiza os links verticalmente */
+  }
+}
