@@ -1,10 +1,7 @@
 
 const OpenAI = require("openai");
 
-const openai = new OpenAI({
-    organization: "org-cOmpkpohfqcJ9nUAHXNxT3sI",
-    project: "proj_OGx4Dd5TD6puRbwtRmaoYAq4",
-});
+
 
 
 var publicacao = `
