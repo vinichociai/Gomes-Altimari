@@ -229,3 +229,56 @@ img {
     flex-direction: column; /* Organiza os links verticalmente */
   }
 }
+
+.providencia-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.providencia-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+.providencia-item label {
+  margin: 0;
+}
+
+.providenciaCheckbox{
+  width: 50px;
+  height: 50px;
+  border: 3px rgb(212, 133, 6) solid;
+  margin: auto;
+  text-align: center;
+}
+
+.providenciaCheckbox:hover{
+  background-color: rgb(125, 125, 170);
+}
+
+.espacoCheck{
+  border: 1px blue solid;
+  border-radius: 5px;
+  border-right: none;
+}
+
+.espacoProvidencia{
+  padding-left: 40px;
+  background-color: #bacae1;
+  border-radius: 5px;
+  border: 1px blue solid;
+  border-left: none;
+  margin-left: -10px;
+
+}
+
+.inputTitulo{
+  width: 100%;
+}
+
+.inputDescricao{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.espacoProvidencia h5{
+  color: rgb(0, 0, 0);
+}
