@@ -1,10 +1,6 @@
 
 const OpenAI = require("openai");
-const openai = new OpenAI({
-    apiKey: "sk-arPE-a9QBFT7TPH8yTE6EJKCl7I_ipf4Swdw4OuuifT3BlbkFJeclRGrtH19k3BcnoJ1wuFte8DblLK4s7i7KMdBaSYA",  // Use your actual API key here
-    organization: "org-cOmpkpohfqcJ9nUAHXNxT3sI",
-    project: "proj_OGx4Dd5TD6puRbwtRmaoYAq4",
-  });
+
 
 class AnalisePublicacaoController{
 
