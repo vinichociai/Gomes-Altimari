@@ -2,10 +2,21 @@ const express = require('express');
 const app = express();
 const bodyParser = require("body-parser")
 const session = require("express-session")
-var router = require("./routes/routes")
-const cors = require('cors');
+var http = require("http").createServer(app)
+var io = require("socket.io")(http)
+var router = require("./routes/routes")(io)
 
+io.on("connection", (socket) =>{
 
+  socket.on("disconnect", (socket) =>{
+      console.log("X desconectou" + socket.id)
+  })
+
+  socket.on("teste", (data) =>{
+      console.log(data)
+  })
+
+})
 
 
 app.set("view engine", "ejs")
@@ -16,11 +27,10 @@ app.use(bodyParser.json())
 
 app.use(express.static("public"))
 
-app.use(session({
-  secret: "fofinho", cookie: {maxAge: 100000000}
-}))
+
 
 app.use("/", router)
+
 
 
 
@@ -28,7 +38,6 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const jQuery = require('jquery');
 
-// Simule um ambiente de navegador carregando um documento HTML
 const dom = new JSDOM(`
 <!DOCTYPE html>
 <html>
@@ -42,17 +51,13 @@ const dom = new JSDOM(`
 </html>
 `);
 
-// Use jQuery no ambiente jsdom
 const $ = jQuery(dom.window);
-
-app.use(cors());
-
-
+ 
 app.get('/', (req, res) => {
   res.render("index.ejs");
 });
 
 const port = 3000;
-app.listen(port, () => {
+http.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
