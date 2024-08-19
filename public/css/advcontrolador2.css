@@ -36,7 +36,7 @@ img {
 .page-title {
   text-align: left;
   margin-top: 20px; /* Aumenta a margem superior */
-  margin-left: 50px; /* Aumenta a margem esquerda para mover para a direita */
+  margin-left: 100px; /* Aumenta a margem esquerda para mover para a direita */
   font-size: 30px;
 }
 
@@ -48,7 +48,6 @@ img {
 }
 
 .process-info {
-  
   font-size: 12px; /* Mantém a fonte menor para caber mais texto */
   background-color: #f8f8f8;
   padding: 10px;
@@ -226,7 +225,7 @@ img {
 }
 
 @media (max-width: 991px) {
-  .navbar-collapse.collapsing{
+  .navbar-collapse.collapsing {
     position: absolute;
     width: 100%;
     top: 100%; /* Ajusta para ficar logo abaixo da navbar */
@@ -243,4 +242,3 @@ img {
     flex-direction: column; /* Organiza os links verticalmente */
   }
 }
-
