@@ -1,9 +1,17 @@
 body {
   font-family: "Segoe UI", Arial, sans-serif; /* Fonte mais próxima ao design */
+  height: 100%; /* Define a altura do corpo e do HTML para 100% */
+  margin: 0; /* Remove margens padrão */
+  overflow: hidden; /* Esconde a barra de rolagem */
 }
 
 .fa {
   margin-right: 5px; /* Espaçamento entre ícones */
+}
+
+.img-fluid {
+  margin-left: 19%;
+  max-width: 96%;
 }
 
 .custom-navbar {
@@ -27,15 +35,12 @@ body {
   padding: 2px;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 .container-principal {
+  min-height: 100vh; /* Garante que o contêiner principal ocupe no mínimo a altura total da tela */
   display: flex;
-  justify-content: space-between; /* Espaço uniforme entre os elementos */
-  width: 98vw;
+  flex-direction: column; /* Orientação em coluna para os conteúdos internos */
+  justify-content: center; /* Centraliza os conteúdos internamente */
+  align-items: center; /* Alinha os conteúdos no centro */
 }
 
 .providencias h1 {
@@ -45,20 +50,9 @@ img {
 }
 
 .gerando-peticao h1 {
-  font-size: 30px; /* Tamanho da fonte aumentado */
+  font-size: 35px; /* Tamanho da fonte aumentado */
   margin-bottom: 10px; /* Espaço entre o título e o conteúdo */
-  margin-top: 1%;
-}
-
-.providencias {
-  color: rgb(0, 0, 0);
-  align-items: center;
-  padding: 10px; /* Reduzido para economizar espaço */
-  margin-bottom: 5px;
-  font-size: 20px; /* Fonte reduzida para economizar espaço */
-  display: flex;
-  flex-direction: column;
-  width: 40%;
+  margin-left: 35%;
 }
 
 .status {
@@ -69,33 +63,26 @@ img {
 .gerando-peticao {
   display: flex;
   padding: 20px 0 20px 20px;
-  border-left: 4px solid black; /* Linha que separa as colunas */
   margin-bottom: 20px;
   text-align: center;
-  width: 55%;
+  width: 70%;
 }
 
 .left {
   width: 70%;
 }
 
-.button-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Espaço entre os botões e o botão cancelar */
-  margin-left: 10px;
-}
-
 .button-group {
   display: flex;
-  flex-direction: column !important;
-  justify-content: space-around; /* Espaçamento uniforme entre os botões */
-  width: 100%; /* Utiliza toda a largura disponível */
-  margin-bottom: 20px; /* Espaço entre os botões principais e o botão cancelar */
-}
-
-.button-cancel {
-  width: 100%; /* Alinha o botão Cancelar à largura do contêiner */
+  flex-direction: column; /* Empilha os botões verticalmente */
+  justify-content: center; /* Centraliza os botões verticalmente no contêiner */
+  align-items: center; /* Alinha os botões à direita */
+  position: absolute; /* Usando posicionamento absoluto */
+  top: 50%; /* Centraliza verticalmente em relação ao contêiner pai */
+  transform: translateY(
+    -50%
+  ); /* Ajusta a posição vertical para exata centralização */
+  right: 10%; /* Mantém os botões à direita */
 }
 
 .btn {
@@ -103,13 +90,6 @@ img {
   border: none;
   color: white;
   margin-right: 10px; /* Espaço entre os botões */
-}
-
-.botao {
-  display: flex;
-  flex-direction: column;
-  width: 22%;
-  margin-left: -12%;
 }
 
 @media (max-width: 768px) {
@@ -130,18 +110,6 @@ img {
 .nav-link.active {
   color: #ff0000; /* Muda a cor para vermelho, ou qualquer cor que destaque */
   font-weight: bold; /* Opcionalmente, torna o texto em negrito */
-}
-
-.button-group {
-  display: flex;
-  flex-direction: row; /* Altera a direção dos botões para horizontal */
-  justify-content: space-around; /* Distribui os botões uniformemente na coluna */
-  width: 110%; /* Ajusta a largura para preencher a coluna */
-}
-
-.button-cancel {
-  width: 100%; /* Mantém o botão Cancelar em toda a largura */
-  margin-top: 20px; /* Adiciona espaço acima do botão Cancelar */
 }
 
 .btn {
@@ -316,5 +284,22 @@ img {
 @media (max-width: 991px) {
   .button-group {
     width: 23vh;
+  }
+}
+
+@media (max-width: 991px) {
+  .gerando-peticao h1 {
+    margin-left: 40%;
+  }
+}
+
+@media (max-width: 991px) {
+  .img-fluid {
+    margin-top: -1%;
+  }
+}
+@media (max-width: 725px) {
+  .gerando-peticao h1 {
+    font-size: 30px;
   }
 }

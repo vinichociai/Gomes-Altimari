@@ -1,23 +1,23 @@
-body {
-  font-family: "Segoe UI", Arial, sans-serif; /* Fonte mais próxima ao design */
-}
+/* body {
+  font-family: "Segoe UI", Arial, sans-serif; 
+} 
 
 .fa {
-  margin-right: 5px; /* Espaçamento entre ícones */
+  margin-right: 5px;
 }
 .custom-navbar {
   background-color: #012777;
-  height: 100px; /* Ajuste a altura conforme necessário */
+  height: 100px;
   position: relative;
 }
 
 .custom-navbar .navbar-brand img.navbar-logo {
-  height: 150px; /* Ajuste a altura conforme necessário */
+  height: 150px;
   max-height: 100%;
 }
 
 .custom-navbar .navbar-nav {
-  margin-left: 20px; /* Centraliza os itens do menu */
+  margin-left: 20px;
 }
 
 .custom-navbar .nav-link:hover {
@@ -26,52 +26,51 @@ body {
   padding: 2px;
 }
 
-
 img {
   max-width: 100%;
   height: auto;
 }
 
 .nav-link.active {
-  color: #ff0000; /* Muda a cor para vermelho, ou qualquer cor que destaque */
-  font-weight: bold; /* Opcionalmente, torna o texto em negrito */
+  color: #ff0000;
+  font-weight: bold;
 }
 
 .section-title {
   text-align: center;
   margin-bottom: 20px;
-  color: #000000; /* Cor azul para título */
+  color: #000000;
 }
 
 .divergencias-list {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza os botões verticalmente */
+  align-items: center;
   margin-bottom: 10px;
 }
 
 .btn-primary {
-  background-color: #0047ab; /* Azul escuro para os botões */
+  background-color: #0047ab;
   color: white;
   border: none;
-  width: 90%; /* Largura dos botões */
-  margin-bottom: 10px; /* Espaço entre os botões */
+  width: 90%;
+  margin-bottom: 10px;
 }
 
 .btn-orange {
-  background-color: orange; /* Botão laranja para 'Próximo' */
+  background-color: orange;
   color: rgb(0, 0, 0);
-  width: 90%; /* Largura do botão Próximo */
+  width: 90%;
   padding: 10px 0;
   border: none;
 }
 
 .next-button {
-  padding: 7px 33px; /* Ajuste de padding para maior área de clique */
+  padding: 7px 33px;
   display: flex;
-  position: absolute; /* Posicionamento absoluto */
-  bottom: 30px; /* Espaço do fundo do contêiner */
-  right: 70px; /* Espaço da direita do contêiner */
+  position: absolute;
+  bottom: 30px;
+  right: 70px;
   background-color: orange;
   color: rgb(255, 255, 255);
   border-radius: 10px;
@@ -84,69 +83,64 @@ img {
   border: none;
 }
 
-/* Media query para dispositivos menores (abaixo de 768px) */
 @media (max-width: 768px) {
   .navbar .nav-link {
-    width: 100%; /* Botões da navbar ocupam toda a largura para fácil acesso */
-    padding: 8px 10px; /* Padding reduzido para economizar espaço */
+    width: 100%;
+    padding: 8px 10px;
   }
 
   .navbar-toggler {
-    display: block; /* Assegura que o toggler está visível */
+    display: block;
   }
 
   .navbar-collapse {
-    text-align: center; /* Centraliza os itens no menu colapsado */
+    text-align: center;
   }
 
   .btn {
-    /* Botões gerais, não apenas na navbar */
-    width: 100%; /* Facilita o toque em dispositivos menores */
-    margin-bottom: 10px; /* Mais espaço entre botões */
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .advogados {
-    /* Específico para a seção de advogados */
-    padding: 20px 0; /* Mais padding vertical */
+    padding: 20px 0;
   }
 
   .list-group-item {
-    /* Itens de lista para espaçamento adequado */
-    display: block; /* Stack verticalmente */
-    text-align: center; /* Texto centralizado */
+    display: block;
+    text-align: center;
   }
 }
 
-/* Media query para telas médias e grandes */
 @media (min-width: 768px) {
   .navbar .nav-link {
-    padding: 10px 20px; /* Maior espaço para interação fácil */
+    padding: 10px 20px;
   }
 
   .container {
-    max-width: 960px; /* Largura máxima para evitar que a tela fique muito larga */
-    margin: auto; /* Centraliza o contêiner */
+    max-width: 960px;
+    margin: auto;
   }
 }
 
-/* Ajustes finos para itens como ícones e cabeçalhos */
+
 .navbar .nav-link svg {
-  margin-right: 5px; /* Espaço entre ícone e texto */
+  margin-right: 5px; 
 }
 
 .advogados-title {
-  font-size: 1em; /* Tamanho maior para cabeçalho de advogados */
+  font-size: 1em; 
 }
 
-/* Media query para dispositivos com largura máxima de 768px */
+
 @media (max-width: 991px) {
   .navbar-brand {
     position: absolute;
-    left: 50%; /* Posiciona a metade da logo no centro */
+    left: 50%; 
     transform: translateX(
       -50%
-    ); /* Desloca a logo para trás pela metade de sua largura para centralizar exatamente */
-    display: block; /* Garante que a logo será tratada como bloco para centralização */
+    ); 
+    display: block; 
   }
 
   .navbar-toggler {
@@ -154,39 +148,39 @@ img {
   }
 
   .navbar {
-    text-align: center; /* Centraliza os itens da navbar */
+    text-align: center; 
   }
 
   .navbar-collapse {
-    justify-content: center; /* Usa flexbox para centralizar os itens do menu quando abertos */
+    justify-content: center; 
   }
 }
 
 @media (max-width: 768px) {
   .navbar-toggler {
-    display: block; /* Certifica-se que o botão de toggle está visível */
-    margin-right: 10px; /* Adiciona margem à direita para balancear o layout */
+    display: block; 
+    margin-right: 10px; 
   }
 }
 
-/* Media query para dispositivos com largura máxima de 768px */
+
 @media (max-width: 991px) {
   .navbar-toggler {
-    float: right; /* Assegura que o botão de toggle esteja à direita */
+    float: right; 
   }
 
-  /* Estilização para o fundo preto e a sobreposição somente em modo responsivo */
+  
   .navbar-collapse.collapsing,
   .navbar-collapse.show {
     display: block;
     position: fixed;
-    top: 56px; /* Altura da navbar */
+    top: 56px; 
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Fundo preto com transparência */
-    z-index: 1050; /* Certifica que sobreponha outros conteúdos */
-    overflow-y: auto; /* Permite a rolagem se o conteúdo for extenso */
+    background-color: rgba(0, 0, 0, 0.9); 
+    z-index: 1050; 
+    overflow-y: auto; 
   }
 
   .navbar-collapse.collapsing {
@@ -194,25 +188,25 @@ img {
   }
 
   .navbar-nav {
-    width: 100%; /* Ocupa toda a largura da sobreposição */
+    width: 100%; 
     padding-top: 10px;
   }
 
   .navbar-nav .nav-link {
-    color: white; /* Garante que o texto seja legível */
-    padding: 10px 15px; /* Espaçamento adequado */
-    border-bottom: 1px solid #444; /* Divisórias sutis entre itens */
+    color: white; 
+    padding: 10px 15px; 
+    border-bottom: 1px solid #444; 
   }
 }
 
 @media (max-width: 991px) {
-  .navbar-collapse.collapsing{
+  .navbar-collapse.collapsing {
     position: absolute;
     width: 100%;
-    top: 100%; /* Ajusta para ficar logo abaixo da navbar */
+    top: 100%; 
     left: 0;
-    background-color: rgba(0, 0, 0, 0.9); /* Fundo preto semi-transparente */
-    z-index: 1050; /* Eleva acima de outros elementos da página */
+    background-color: rgba(0, 0, 0, 0.9); 
+    z-index: 1050; 
   }
 
   .navbar-collapse {
@@ -220,6 +214,6 @@ img {
     top: 100%;
     left: 0;
     display: flex;
-    flex-direction: column; /* Organiza os links verticalmente */
+    flex-direction: column; 
   }
 }
