@@ -1,3 +1,6 @@
+var Providencias = require("../models/ProvidenciasModel.js")
+var Advogados = require("../models/AdvogadosModel.js")
+
 
 class DashboardController{
 
@@ -9,16 +12,18 @@ class DashboardController{
         res.render("analiseDivergencia.ejs")
     }
 
-    async carregaPaginaAdvControlador(req,res){
-        res.render("advControlador.ejs")
+    async carregaPaginaGerenciarProvidencias(req,res){
+        var providencias = await Providencias.listarTodasProvidencias()
+        var advogados = await Advogados.mostraTodosAdvogados()
+        res.render("gerenciarProvidencias.ejs", {providencias:providencias, advogados:advogados})
     }
 
     async carregaPaginaAdvExecutor(req,res){
         res.render("advExecutor.ejs")
     }
 
-    async carregaPaginaVisualizarProvidencias(req,res){
-        res.render("visualizarProvidencias.ejs")
+    async carregaPaginaCadastrarProvidencias(req,res){
+        res.render("cadastrarProvidencias.ejs")
     }
     
 }
