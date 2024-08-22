@@ -1,6 +1,4 @@
 
-const OpenAI = require("openai");
-
 
 class AnalisePublicacaoController{
 
@@ -50,12 +48,11 @@ class AnalisePublicacaoController{
         
             const tituloProvidencia = `${numero}. ${tituloParte}`; 
             const dataCriacaoProvidencia = await this.geraDataAtual();
-
-            secciones.push({ tituloProvidencia, descricaoProvidencia, dataCriacaoProvidencia});
+        
+            secciones.push({ tituloProvidencia, descricaoProvidencia, dataCriacaoProvidencia });
         }
         
         return secciones;
-        
 
       } catch (error) {
         console.error('Erro ao processar a publicação:', error);
@@ -77,7 +74,7 @@ class AnalisePublicacaoController{
 
  
           io.emit("providencias", providencias);
-          res.status(200).send({ success: true }); // Responde para o cliente que a operação foi bem-sucedida
+          res.status(200).send({ success: true });
 
           
 
