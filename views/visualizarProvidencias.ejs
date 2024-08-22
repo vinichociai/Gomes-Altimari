@@ -1,0 +1,337 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Providências</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/visualizarprovidencias.css">
+    <link rel="icon" type="image/png" href="/img/imagemlogo.png">
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+
+        <div class="container">
+            <h1 class="page-title" style="color: orange;">Cadastrar Providências</h1>
+            <div class="row">
+                <div class="col-8">
+                    <h3>Analise de Publicação</h3>
+
+                    <div class="row">
+                        <p>Faça a analise de um Arquivo WORD (Em aquivos de versões antigas do word não funcionará)</p>
+                        <input type="file" id="docWord" />
+                    </div>
+
+                    <br><br>
+                    <div class="row">
+                        <p>Faça a analise de um Arquivo PDF.</p>
+                        <input type="file" id="docPDF" />
+                    </div>
+
+                    <br><br>
+                    <div class="row">
+                        <p>Clique abaixo para colar diretamente uma publicação</p>
+                        <button style="width: 25%;" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#modalAnalisePublicação">Colar Publicação </button>
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="col-4">
+                    <h3>Advogados</h3>
+                </div>
+
+
+            </div>
+
+            <!--  <div class="row mt-5 mb-5">
+                <h2>Cadastro de Providências</h2>
+                <div id="cadastroProvidencias" class="row">
+                    <div class="col-3 d-flex align-items-center justify-content-center espacoCheck">
+                            <input class="form-check-input" type="checkbox" id="providenciaCheckbox">   
+                    </div>
+                    <div class="col-9 espacoProvidencia">
+                        <div class="row">
+                            <div>
+                                <h5 style="margin-top: 10px;">Titulo:</h5>
+                                <input class="inputTitulo" providencia-titulo-id="" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <h5>Descrição:</h5>
+                                <textarea class="inputDescricao" providencia-descricao-id=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade modal-lg" id="modalAnalisePublicação" data-bs-backdrop="static" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Análise de Publicação - Gerar Providências
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <form id="formPublicacao">
+                                <div class="row">
+                                    <h2>Análise de Publicação:</h2>
+                                    <textarea class="form-control" rows="10" name="publicacao"
+                                        id="publicacao"></textarea>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <button style="margin-top: 10px;" type="submit" class="btn btn-success">Fazer
+                                            Análise</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div id="loading" style="display: none;">Carregando...</div>
+
+                            <div style="display: none;" id="espacoAppendProvidencias" class="row mt-5 mb-5">
+                                <h2>Cadastro de Providências</h2>
+                            </div>
+                            <button style="display: none;" id="saveButton" class="btn btn-primary">Salvar</button>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"
+    integrity="sha512-luMnTJZ7oEchNDZAtQhgjomP1eZefnl82ruTH/3Oj/Yu5qYtwL7+dVRccACS/Snp1lFXq188XFipHKYE75IaQQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    document.getElementById('docWord').addEventListener('change', function (event) {
+        $("#publicacao").val('')
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            mammoth.extractRawText({ arrayBuffer: event.target.result })
+                .then(function (result) {
+                    publicacao = result.value
+                    $('#modalAnalisePublicação').modal('show');
+                    $("#publicacao").val(publicacao)
+                })
+                .catch(function (err) {
+                    console.error(err.message);
+                });
+        };
+        reader.readAsArrayBuffer(event.target.files[0]);
+    });
+
+
+
+    document.getElementById('docPDF').addEventListener('change', async (event) => {
+        $("#publicacao").val('')
+        const file = event.target.files[0];
+        if (file && file.type === 'application/pdf') {
+            const fileReader = new FileReader();
+            fileReader.onload = async function () {
+                const typedarray = new Uint8Array(this.result);
+
+                const pdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
+                let pdfText = '';
+
+                for (let i = 1; i <= pdf.numPages; i++) {
+                    const page = await pdf.getPage(i);
+                    const textContent = await page.getTextContent();
+                    const pageText = textContent.items.map(item => item.str).join(' ');
+                    pdfText += pageText + '\n';
+                }
+
+                $('#modalAnalisePublicação').modal('show');
+                $("#publicacao").val(pdfText)
+            };
+            fileReader.readAsArrayBuffer(file);
+        } else {
+            alert('Por favor, escolha um arquivo Pdf');
+        }
+    });
+
+
+    document.getElementById("formPublicacao").addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const publicacao = document.getElementById("publicacao").value;
+
+        const loadingElement = document.getElementById("loading");
+        loadingElement.style.display = 'block';
+
+        // Envia os dados via POST para o servidor
+        try {
+            const response = await fetch('/analise-publicacao', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ publicacao })
+            });
+
+            if (response.ok) {
+                console.log("Requisição bem-sucedida.");
+            } else {
+                console.error("Erro na requisição.");
+            }
+
+        } catch (error) {
+            console.error('Erro ao enviar a publicação:', error);
+        } finally {
+            document.getElementById("saveButton").style.display = 'block'
+            document.getElementById("espacoAppendProvidencias").style.display = 'block'
+            loadingElement.style.display = 'none';
+        }
+    });
+
+
+
+    const socket = io('http://localhost:3000');
+    socket.on('connect', () => {
+        console.log('Connected to server');
+    });
+
+
+    socket.emit("teste", { teste: "teste" })
+
+    socket.on('providencias', (providencias) => {
+        console.log(providencias);
+        document.getElementById("loading").style.display = 'none';
+
+
+        // Seleciona o contêiner onde os elementos serão adicionados
+        const container = document.getElementById('espacoAppendProvidencias');
+
+        // Função para adicionar providências dinamicamente
+        function adicionarProvidencias(providencias) {
+            providencias.forEach((providencia, index) => {
+                // Cria o HTML para a providência
+                const html = `
+            <div class="col-3 d-flex align-items-center justify-content-center espacoCheck">
+                <input class="form-check-input providenciaCheckbox" type="checkbox" id="providenciaCheckbox-${index}" data-id="${index}">
+            </div>
+            <div class="col-9 espacoProvidencia">
+                <div class="row">
+                    <div>
+                        <h5 style="margin-top: 10px;">Título:</h5>
+                        <input class="inputTitulo form-control" type="text" value="${providencia.tituloProvidencia}" data-id="${index}">
+                        <input class="inputDataCriacao form-control" type="text" value="${providencia.dataCriacaoProvidencia}" data-id="${index}">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <h5>Descrição:</h5>
+                        <textarea class="inputDescricao form-control" rows="4" data-id="${index}">${providencia.descricaoProvidencia}</textarea>
+                    </div>
+                </div>
+            </div>
+        `;
+
+                // Cria um novo elemento div para a providência e define o HTML
+                const div = document.createElement('div');
+                div.className = 'row mb-3';
+                div.innerHTML = html;
+
+                // Adiciona o elemento ao contêiner
+                container.appendChild(div);
+            });
+        }
+
+        // Adiciona as providências ao contêiner
+        adicionarProvidencias(providencias);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('Disconnected from server');
+    });
+
+
+    document.getElementById('saveButton').addEventListener('click', function () {
+        const selectedProvidencias = [];
+
+        document.querySelectorAll('#espacoAppendProvidencias .row').forEach(row => {
+            const checkbox = row.querySelector('.form-check-input');
+            if (checkbox && checkbox.checked) {
+                const titulo = row.querySelector('.inputTitulo').value;
+                const descricao = row.querySelector('.inputDescricao').value;
+                const dataCriacao = row.querySelector('.inputDataCriacao').value;
+
+
+                // Adiciona a providência selecionada ao array
+                selectedProvidencias.push({
+                    tituloProvidencia: titulo,
+                    descricaoProvidencia: descricao,
+                    dataCriacaoProvidencia: dataCriacao
+                });
+            }
+        });
+
+        console.log(selectedProvidencias)
+
+        // Envia os dados para o servidor via POST
+        fetch('/cadastraProvidencias', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ selectedProvidencias: selectedProvidencias })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                if (data.success) {
+                    alert(data.message);
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+
+
+    });
+
+
+</script>
+
+</html>
