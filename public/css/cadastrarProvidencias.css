@@ -1,6 +1,5 @@
 body {
   font-family: "Segoe UI", Arial, sans-serif; /* Fonte mais próxima ao design */
-  line-height: 1.6;
 }
 
 .fa {
@@ -28,80 +27,76 @@ body {
   padding: 2px;
 }
 
+
+
 img {
   max-width: 100%;
   height: auto;
 }
 
 .page-title {
-  text-align: left;
-  margin-top: 20px; /* Aumenta a margem superior */
-  margin-left: 50px; /* Aumenta a margem esquerda para mover para a direita */
-  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.page-title2 {
-  margin-top: -45px;
-  margin-bottom: 20px;
-  margin-left: 60px;
-  font-size: 30px;
-}
-
-.process-info {
-  
-  font-size: 12px; /* Mantém a fonte menor para caber mais texto */
-  background-color: #f8f8f8;
+.search-section h2,
+.lawyers-section h2 {
+  background-color: #0047ab;
+  color: white;
   padding: 10px;
-  border: 1px solid #ccc;
-  margin: 20px; /* Ajuste conforme necessário */
-  width: 78%; /* Ajusta a largura para ser menor */
-  height: 550px; /* Aumenta a altura */
-  box-sizing: border-box; /* Inclui padding no cálculo da largura/altura */
-  text-align: justify;
 }
 
-.providencias li button {
-  width: 100%; /* Faz o botão ocupar toda a largura disponível */
-  padding: 12px 20px; /* Aumenta o padding para fazer o botão maior */
-  font-size: 16px; /* Aumenta o tamanho da fonte para melhor legibilidade */
-  margin-bottom: 10px; /* Assegura um espaço entre os botões */
-  background-color: #0047ab; /* Cor azul conforme o design */
-  color: white; /* Texto branco para contraste */
-  border: none; /* Remove qualquer borda padrão */
+.search-results .result-item {
+  background-color: #e0e0e0;
+  border: 1px solid #000;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.lawyers-section {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+/* Estilos para garantir que a seção de advogados esteja corretamente formatada */
+.lawyers-section .lawyer-item {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.lawyers-section .lawyer-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.lawyers-section .lawyer-item .name {
+  font-weight: bold;
 }
 
 .next-button {
-  padding: 10px 20px; /* Ajuste de padding para maior área de clique */
+  padding: 7px 33px; /* Ajuste de padding para maior área de clique */
   display: flex;
   position: absolute; /* Posicionamento absoluto */
   bottom: 30px; /* Espaço do fundo do contêiner */
-  right: 70px; /* Espaço da direita do contêiner */
+  right: 628px; /* Espaço da direita do contêiner */
   background-color: orange;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 10px;
 }
 
-/* Ajuste na responsividade para manter tudo alinhado e visível */
-@media (max-width: 768px) {
-  .providencias li button,
-  .next-button .btn-orange {
-    width: 100%; /* Garante que os botões ajustem-se ao novo layout de tela */
-  }
-
-  .next-button {
-    position: static; /* Remove o posicionamento absoluto em telas menores */
-    margin-top: 20px; /* Espaço extra acima do botão 'Próximo' */
-  }
+.nav-link.active {
+  color: #ff0000; /* Muda a cor para vermelho, ou qualquer cor que destaque */
+  font-weight: bold; /* Opcionalmente, torna o texto em negrito */
 }
 
-@media (max-width: 992px) {
-  .row {
-    flex-direction: column; /* Empilha as colunas verticalmente em telas menores */
-    .col-md-8,
-    .col-md-4 {
-      width: 100%; /* Faz as colunas ocuparem toda a largura em dispositivos móveis */
-    }
-  }
+.btn-orange {
+  background-color: orange; /* Botão laranja para 'Próximo' */
+  color: rgb(0, 0, 0);
+  padding: 10px 0;
+  width: 110%;
+  border: none;
 }
 
 /* Media query para dispositivos menores (abaixo de 768px) */
@@ -147,15 +142,6 @@ img {
     max-width: 960px; /* Largura máxima para evitar que a tela fique muito larga */
     margin: auto; /* Centraliza o contêiner */
   }
-}
-
-/* Ajustes finos para itens como ícones e cabeçalhos */
-.navbar .nav-link svg {
-  margin-right: 5px; /* Espaço entre ícone e texto */
-}
-
-.advogados-title {
-  font-size: 1em; /* Tamanho maior para cabeçalho de advogados */
 }
 
 /* Media query para dispositivos com largura máxima de 768px */
@@ -226,7 +212,7 @@ img {
 }
 
 @media (max-width: 991px) {
-  .navbar-collapse.collapsing{
+  .navbar-collapse.collapsing {
     position: absolute;
     width: 100%;
     top: 100%; /* Ajusta para ficar logo abaixo da navbar */
@@ -244,3 +230,75 @@ img {
   }
 }
 
+.providencia-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.providencia-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+.providencia-item label {
+  margin: 0;
+}
+
+.providenciaCheckbox{
+  width: 50px;
+  height: 50px;
+  border: 3px rgb(212, 133, 6) solid;
+  margin: auto;
+  text-align: center;
+}
+
+.providenciaCheckbox:hover{
+  background-color: rgb(125, 125, 170);
+}
+
+.espacoCheck{
+  border: 1px blue solid;
+  border-radius: 5px;
+  border-right: none;
+}
+
+.espacoProvidencia{
+  padding-left: 40px;
+  background-color: #bacae1;
+  border-radius: 5px;
+  border: 1px blue solid;
+  border-left: none;
+  margin-left: -10px;
+
+}
+
+.inputTitulo{
+  width: 100%;
+}
+
+.inputDescricao{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.espacoProvidencia h5{
+  color: rgb(0, 0, 0);
+}
+
+
+.publicacao{
+  border: 1px solid black;
+}
+
+.inputDataCriacao{
+  display: none;
+}
+
+.campo {
+  margin-top: 10px;
+}
+.campo input[type="text"], .campo input[type="date"], .campo input[type="time"] {
+  display: block;
+  margin: 5px 0;
+}
+.group {
+  margin-bottom: 20px;
+}

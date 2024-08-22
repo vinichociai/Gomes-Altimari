@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela do Advogado Controlador 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/gerenciarProvidencias.css">
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+
+        <section id="cabecalho">
+            <div class="container">
+                <div class="row text-center mt-3 mb-3">
+                    <h1 style="color: orange;">Gerenciar Providencias</h1>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="filtro">
+            <div class="row">
+                <div class="col-md">
+                    <div class="input-group">
+                        <div class="wrapperSearch">
+                            <div class="search-input">
+                                <a href="" target="_blank" hidden></a>
+                                <input type="text" placeholder="Procure pela providência..." id="inputNome">
+                                <input type="hidden" id="idPessoaInput">
+                                <div id="autocom-box" class="autocom-box">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" id="linhaFiltros">
+                <div class="col-md-3">
+                    <div class="form-floating">
+                        <select class="form-select" id="selectDataConclusao">
+                            <option selected value="0">Data de Conclusão</option>
+                            <option value="1">Data: Crescente</option>
+                            <option value="2">Data: Decrescente</option>
+                        </select>
+                        <label for="selectDataConclusao">Classificar por</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <select class="form-select" id="selectAdvogados">
+                            <option value="0" selected>Advogados</option>
+                            <% advogados.forEach((advogado)=> { %>
+                                <option value="<%=advogado.id%>">
+                                    <%=advogado.nomeCompleto%>
+                                </option>
+
+                                <% })%>
+                        </select>
+                        <label for="selectAdvogados">Filtrar por</label>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-floating">
+                        <select class="form-select" id="selectCompromissoTarefa">
+                            <option value="0" selected>Selecionar Tipo</option>
+                            <option value="1">Tarefa</option>
+                            <option value="2">Compromisso</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="form-floating">
+                        <select class="form-select" id="selectStatus">
+                            <option value="0" selected>Selecionar Status</option>
+                            <option value="1">Concluido</option>
+                            <option value="2">Pendente</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button id="botaoBuscar" class="btn btn-success"> Buscar </button>
+                    <button id="botaoRedefinir" class="btn btn-warning"> Redefinir </button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="providencias" class="mb-5">
+            <div class="row text-center mt-5" id="testeee">
+
+                <%providencias.forEach((providencia)=>{%>
+
+                    <div class="col-4">
+                        <h6> <strong>Providência:</strong>
+                            <%= providencia.tituloProvidencia %>
+                        </h6>
+                        <p><strong>Ação:</strong>
+                            <%= providencia.descricaoProvidencia %>
+                        </p>
+                        <p><strong>É um compromisso?</strong>
+                            <%= providencia.ehCompromisso==1 ? "Sim" : "Não" %>
+                        </p>
+                        <p><strong>Data de Conclusão:</strong>
+                            <%= providencia.dataConclusao %>
+                        </p>
+
+                        <%if(providencia.ehCompromisso==1){%>
+                            <p><strong>Hora de Conclusão:</strong>
+                                <%= providencia.horaConclusao %>
+                            </p>
+                            <%}%>
+                                <p><strong>Foi Concluida?:</strong>
+                                    <%= providencia.concluido==1 ? "Sim" : "Não" %>
+                                </p>
+
+                                <p><strong>Advogado Vinculado:</strong>
+                                    <%= providencia.nomeCompleto %>
+                                </p>
+
+                                <%if(providencia.observacao !=undefined){%>
+                                    <p><strong>Observação:</strong>
+                                        <%= providencia.observacao %>
+                                    </p>
+                                    <%}%>
+
+                    </div>
+
+                    <% })%>
+
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- <ul class="list-unstyled providencias">
+                <li><button class="btn btn-primary">Juntar procuração</button></li>
+                <li><button class="btn btn-primary">Juntar guias de custas</button></li>
+                <li><button class="btn btn-primary">Apresentar contestação</button></li>
+            </ul> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+<script>
+
+    $("#botaoBuscar").click(function () {
+        const dataConclusao = $("#selectDataConclusao").val()
+        const advogado = $("#selectAdvogados").val()
+        const compromissoTarefa = $("#selectCompromissoTarefa").val()
+        const status = $("#selectStatus").val()
+
+        console.log(status)
+
+        let url = '/providencias/filtro';
+        let params = [];
+
+        if (dataConclusao) params.push(`dataConclusao=${dataConclusao}`);
+        if (advogado) params.push(`advogado=${advogado}`);
+        if (compromissoTarefa) params.push(`compromissoTarefa=${compromissoTarefa}`);
+        if (status) params.push(`status=${status}`);
+
+
+        if (params.length > 0) {
+            url += '?' + params.join('&');
+        }
+
+        axios.get(url)
+            .then(response => {
+                atualizarListaCursos(response.data);
+
+            })
+            .catch(error => {
+                console.error('Erro ao buscar dados:', error);
+            });
+
+    })
+
+    function atualizarListaCursos(providencias) {
+        var elemento = document.getElementById('testeee');
+
+
+        while (elemento.firstChild) {
+            elemento.removeChild(elemento.firstChild)
+        }
+
+        if (providencias <= 0) {
+            var cursoElement = document.createElement('div');
+            cursoElement.innerHTML = `<h3 style="margin: 0px 0px 10px 10px"> Nenhum resultado encontrado </h3>`
+            elemento.appendChild(cursoElement)
+
+        }
+        elemento.classList.add('row');
+
+        providencias.forEach(providencia => {
+            var cursoElement = document.createElement('div');
+            cursoElement.classList.add('col-4'); // Adiciona a classe 'col-4' à div criada
+            cursoElement.innerHTML = `
+                <h6><strong>Providência:</strong> ${providencia.tituloProvidencia}</h6>
+                <p><strong>Ação:</strong> ${providencia.descricaoProvidencia}</p>
+                <p><strong>É um compromisso?</strong> ${providencia.ehCompromisso == 1 ? "Sim" : "Não"}</p>
+                <p><strong>Data de Conclusão:</strong> ${providencia.dataConclusao}</p>
+
+                ${providencia.ehCompromisso == 1 ? `
+                    <p><strong>Hora de Conclusão:</strong> ${providencia.horaConclusao}</p>
+                ` : ''}
+
+                <p><strong>Foi Concluida?:</strong> ${providencia.concluido == 1 ? "Sim" : "Não"}</p>
+                <p><strong>Advogado Vinculado:</strong> ${providencia.nomeCompleto}</p>
+
+                ${providencia.observacao !== undefined ? `
+                    <p><strong>Observação:</strong> ${providencia.observacao}</p>
+                ` : ''}
+            `;
+
+            elemento.appendChild(cursoElement);
+        });
+
+    }
+
+
+    $("#botaoRedefinir").click(function () {
+        $("#selectDataConclusao").val(0)
+        $("#selectAdvogados").val(0)
+        $("#selectCompromissoTarefa").val(0)
+        $("#selectStatus").val(0)
+        $("#botaoBuscar").click()
+        $("#inputNome").val("")
+
+    })
+</script>
