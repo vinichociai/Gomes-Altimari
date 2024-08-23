@@ -12,6 +12,7 @@ module.exports = function(io) {
     router.get("/gerenciar-providencias", (req, res) => DashboardController.carregaPaginaGerenciarProvidencias(req, res, io));
     router.get("/advExecutor", (req, res) => DashboardController.carregaPaginaAdvExecutor(req, res, io));
     router.get("/cadastrar-providencias", (req, res) => DashboardController.carregaPaginaCadastrarProvidencias(req, res, io));
+    router.get("/cadastro", (req, res) => DashboardController.carregaPaginaCadastro(req, res, io));
 
     router.post("/analise-publicacao", (req, res) => AnalisePublicacaoController.analisePublicacao(req, res, io));
 

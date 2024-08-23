@@ -107,7 +107,7 @@ img {
 
 .bi-person-fill {
   width: 24px; /* Aumenta a largura do ícone */
-  height: 24px; /* Aumenta a altura do ícone */
+  height: 17px; /* Aumenta a altura do ícone */
 }
 
 .lupa {
@@ -163,6 +163,7 @@ img {
   color: white;
   padding: 10px;
   text-align: center;
+  font-size: 24px;
 }
 .lawyers-section {
   background-color: #f0f0f0;
@@ -186,14 +187,10 @@ img {
   font-weight: bold;
 }
 
-
-
 .list-group-item:last-child {
   text-align: center;
+  font-size: 10px;
 }
-
-
-
 
 /* Media query para dispositivos menores (abaixo de 768px) */
 @media (max-width: 768px) {

@@ -8,6 +8,10 @@ class DashboardController{
         res.render("dashboard.ejs")
     }
 
+    async carregaPaginaCadastro(req, res){
+        res.render("cadastro.ejs")
+    }
+
     async carregaPaginaAnaliseDivergencia(req,res){
         res.render("analiseDivergencia.ejs")
     }

@@ -1,4 +1,9 @@
-
+const OpenAI = require("openai");
+const openai = new OpenAI({
+  apiKey: "",
+  organization: "",
+  project: "",
+});
 
 class AnalisePublicacaoController{
 
