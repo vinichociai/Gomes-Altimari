@@ -36,7 +36,7 @@ body {
 }
 
 .container-principal {
-  min-height: 100vh; /* Garante que o contêiner principal ocupe no mínimo a altura total da tela */
+  min-height: 78vh; /* Garante que o contêiner principal ocupe no mínimo a altura total da tela */
   display: flex;
   flex-direction: column; /* Orientação em coluna para os conteúdos internos */
   justify-content: center; /* Centraliza os conteúdos internamente */
@@ -49,10 +49,9 @@ body {
   margin-top: 3%;
 }
 
-.gerando-peticao h1 {
-  font-size: 35px; /* Tamanho da fonte aumentado */
-  margin-bottom: 10px; /* Espaço entre o título e o conteúdo */
-  margin-left: 35%;
+.page-title {
+  text-align: center;
+  margin-top: 10px;
 }
 
 .status {
@@ -60,7 +59,7 @@ body {
   font-size: 20px;
 }
 
-.gerando-peticao {
+.imagempeticao {
   display: flex;
   padding: 20px 0 20px 20px;
   margin-bottom: 20px;
@@ -86,10 +85,10 @@ body {
 }
 
 .btn {
-  background-color: orange;
   border: none;
   color: white;
   margin-right: 10px; /* Espaço entre os botões */
+  width: 19vh;
 }
 
 @media (max-width: 768px) {
@@ -133,7 +132,7 @@ body {
 
   .btn {
     /* Botões gerais, não apenas na navbar */
-    width: 100%; /* Facilita o toque em dispositivos menores */
+    width: 19vh; /* Facilita o toque em dispositivos menores */
     margin-bottom: 10px; /* Mais espaço entre botões */
   }
 
@@ -274,7 +273,7 @@ body {
 }
 
 @media (max-width: 991px) {
-  .gerando-peticao {
+  .imagempeticao {
     width: 100%;
     border-left: none; /* Remove a linha que separa as colunas */
     padding: 20px; /* Adiciona espaço uniforme ao redor */
@@ -288,18 +287,7 @@ body {
 }
 
 @media (max-width: 991px) {
-  .gerando-peticao h1 {
-    margin-left: 40%;
-  }
-}
-
-@media (max-width: 991px) {
   .img-fluid {
     margin-top: -1%;
-  }
-}
-@media (max-width: 725px) {
-  .gerando-peticao h1 {
-    font-size: 30px;
   }
 }

@@ -11,12 +11,10 @@ module.exports = function(io) {
     router.get("/analise-de-divergencia", (req, res) => DashboardController.carregaPaginaAnaliseDivergencia(req, res, io));
     router.get("/gerenciar-providencias", (req, res) => DashboardController.carregaPaginaGerenciarProvidencias(req, res, io));
     router.get("/advExecutor", (req, res) => DashboardController.carregaPaginaAdvExecutor(req, res, io));
-<<<<<<< Updated upstream
     router.get("/cadastrar-providencias", (req, res) => DashboardController.carregaPaginaCadastrarProvidencias(req, res, io));
-=======
     router.get("/visualizar-providencias", (req, res) => DashboardController.carregaPaginaVisualizarProvidencias(req, res, io));
     router.get("/cadastro", (req, res) => DashboardController.carregaPaginacadastro(req, res, io));
->>>>>>> Stashed changes
+    router.get("/cadastro", (req, res) => DashboardController.carregaPaginaCadastro(req, res, io));
 
     router.post("/analise-publicacao", (req, res) => AnalisePublicacaoController.analisePublicacao(req, res, io));
 

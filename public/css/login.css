@@ -107,6 +107,7 @@ img {
 
 .bi-person-fill {
   width: 24px; /* Aumenta a largura do ícone */
+  height: 17px; /* Aumenta a altura do ícone */
 }
 
 .lupa {
@@ -162,7 +163,7 @@ img {
   color: white;
   padding: 10px;
   text-align: center;
-  font-size: 20px;
+  font-size: 24px;
 }
 .lawyers-section {
   background-color: #f0f0f0;
