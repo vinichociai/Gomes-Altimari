@@ -42,6 +42,18 @@ class ProvidenciasController{
         res.json(providencias)
     }
 
+    async deletarProvidencia(req, res){
+        var idProvidencia = req.params.idProvidencia
+
+        var operacaoDeletar = await Providencias.deletarProvidencia(idProvidencia)
+
+        if(!operacaoDeletar){
+            res.status(403).json({ success: false, message: "Houve um erro ao deletar a providência" });
+        }
+        res.status(200).json({ success: true, message: "Providência deletada com sucesso" });
+
+    }
+
 
 }
 

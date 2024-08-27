@@ -14,12 +14,12 @@
             <div class="icon-user mb-4 d-flex justify-content-center">
                 <i class="fas fa-user-circle fa-3x"></i> 
             </div>
-            <form>
+            <form  method="POST" action="/autenticarLogin">
                 <div class="mb-3">
-                    <input type="email" class="form-control" id="emailID" placeholder="Email:" required>
+                    <input type="email" name="emailLogin" class="form-control" id="emailID" placeholder="Email:" required>
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control" id="password" placeholder="Senha:" required>
+                    <input type="password" name="senhaLogin" class="form-control" id="password" placeholder="Senha:" required>
                 </div>
                 <div class="mb-3 form-check d-flex justify-content-between">
                     <label class="form-check-label" for="rememberMe">
@@ -28,7 +28,7 @@
                     </label>
                     <a href="#">Esqueceu a senha?</a>
                 </div>
-                 <a href="/dashboard">Entrar</a>
+                <button type="submit" class="btn btn-success">Login</button>
             </form>
         </div>
     </div>

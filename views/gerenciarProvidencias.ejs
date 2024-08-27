@@ -132,6 +132,19 @@
                                     </p>
                                     <%}%>
 
+                                        <% if(idAdvogadoVinculado != 0 && idAdvogadoVinculado.id == providencia.idAdvogadoVinculado ){ %>
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Realizar Ações
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Marcar como concluida</a></li>
+                                                <li><a class="dropdown-item" href="#">Editar</a></li>
+                                                <li><a class="dropdown-item" atributo-deletar="<%= providencia.id %>" class="btnDeletar">Deletar</a></li>
+                                            </ul>
+                                        </div>
+                                        <%}%>
                     </div>
 
                     <% })%>
@@ -252,4 +265,34 @@
         $("#inputNome").val("")
 
     })
+
+    console.log("teste");
+
+    $(document).ready(function() {
+    // Seleciona todos os botões de deletar
+    $('.btnDeletar').on('click', function(event) {
+        console.log("click");
+
+        event.preventDefault();
+        var providenciaId = $(this).attr('atributo-deletar');
+
+        if (confirm('Tem certeza que deseja deletar essa providência?')) {
+            $.ajax({
+                url: `/providencia/${providenciaId}`,
+                type: 'DELETE',
+                contentType: 'application/json',
+                success: function(response) {
+                    console.log(response);
+                    alert('Providência deletada com sucesso!');
+                    $(event.target).closest('.dropdown').remove();
+                },
+                error: function(xhr, status, error) {
+                    console.error('Erro:', error);
+                    alert('Erro ao deletar a providência.');
+                }
+            });
+        }
+    });
+});
+
 </script>

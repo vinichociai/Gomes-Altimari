@@ -1,4 +1,9 @@
-
+const OpenAI = require("openai");
+const openai = new OpenAI({
+  apiKey: "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",  // Use your actual API key here
+  organization: "org-cOmpkpohfqcJ9nUAHXNxT3sI",
+  project: "proj_OGx4Dd5TD6puRbwtRmaoYAq4",
+});
 
 class AnalisePublicacaoController{
 
@@ -22,7 +27,7 @@ class AnalisePublicacaoController{
           messages: [
             {
               role: "system",
-              content: `Você é um assistente de advogado. Sua função é otimizar o trabalho dos advogados fazendo análise de publicações judiciais que lhe serão entregues. Você deve analisar a publicação e pontualmente gerar todas as providências necessárias para cada uma. Você deve fornecer as providencias seguindo o seguinte modelo: "1. *TJ-MS - Recurso Inominado Cível nº 0802498-03.2022.8.12.0019* - *Providência:* - Informar ao cliente sobre a manutenção da sentença com a indenização de R$ 5.000,00 e que o recurso da ré não foi provido." Ou seja, o numero da providencia(É MUITO IMPORTANTE TER O NUMERO DE CADA PROVIDENCIA NA FRENTE DO NUMERO DO PROCESSO, MESMO QUE SÓ TENHA 1), o processo e abaixo a providencia. A publicação é: ${publicacao}`,
+              content: `Você é um assistente de advogado. Sua função é otimizar o trabalho dos advogados fazendo análise de publicações judiciais que lhe serão entregues. Você deve analisar a publicação e pontualmente gerar todas as providências necessárias para cada uma isso deve ser uma analise, nao um copia e cola. Você deve se portar como um controller, é você quem dita os as regras e nao quem envia para outra pessoa que depois ira repassar novamente. Você deve fornecer as providencias seguindo o seguinte modelo: "1. *TJ-MS - Recurso Inominado Cível nº 0802498-03.2022.8.12.0019* - *Providência:* - Informar ao cliente sobre a manutenção da sentença com a indenização de R$ 5.000,00 e que o recurso da ré não foi provido." Ou seja, o numero da providencia(É MUITO IMPORTANTE TER O NUMERO DE CADA PROVIDENCIA NA FRENTE DO NUMERO DO PROCESSO, MESMO QUE SÓ TENHA 1), o processo e abaixo a providencia. A publicação é: ${publicacao}`,
             },
           ],
           max_tokens: 4000,  

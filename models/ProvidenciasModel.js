@@ -63,6 +63,18 @@ class Providencias {
         }
     }
 
+    async deletarProvidencia(idProvidencia) {
+        try {
+            await knex.delete().table("providencias").where("id", idProvidencia)
+
+            return { status: true }
+
+        } catch (error) {
+            console.log(error)
+            return { status: false }
+        }
+    }
+
 
 
 }

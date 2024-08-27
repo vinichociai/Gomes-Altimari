@@ -19,6 +19,9 @@ module.exports = function(io) {
     router.get("/advogados", (req, res) => AdvogadosController.mostraTodosAdvogados(req, res, io));
     router.get("/providencias", (req, res) => ProvidenciasController.listaTodasProvidencias(req,res))
     router.get("/providencias/filtro", (req, res) => ProvidenciasController.listaTodasProvidenciasFiltro(req,res))
+    router.post("/autenticarLogin", (req, res) => AdvogadosController.autenticarLogin(req,res))
+
+    router.delete("/providencia/:idProvidencia", (req, res) => ProvidenciasController.deletarProvidencia(req,res))
 
     return router;
 };
