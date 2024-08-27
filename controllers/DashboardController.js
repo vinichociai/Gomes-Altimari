@@ -5,7 +5,13 @@ var Advogados = require("../models/AdvogadosModel.js")
 class DashboardController{
 
     async carregaPaginaDashboard(req, res){
-        res.render("dashboard.ejs")
+        var idAdvogadoVinculado
+        if(req.session.user){
+            idAdvogadoVinculado = req.session.user
+        }else{
+            idAdvogadoVinculado = 0
+        }
+        res.render("dashboard.ejs", {idAdvogadoVinculado: idAdvogadoVinculado})
     }
 
     async carregaPaginaCadastro(req, res){
@@ -13,21 +19,46 @@ class DashboardController{
     }
 
     async carregaPaginaAnaliseDivergencia(req,res){
-        res.render("analiseDivergencia.ejs")
+        var idAdvogadoVinculado
+        if(req.session.user){
+            idAdvogadoVinculado = req.session.user
+        }else{
+            idAdvogadoVinculado = 0
+        }
+        res.render("analiseDivergencia.ejs", {idAdvogadoVinculado:idAdvogadoVinculado})
     }
 
     async carregaPaginaGerenciarProvidencias(req,res){
         var providencias = await Providencias.listarTodasProvidencias()
         var advogados = await Advogados.mostraTodosAdvogados()
-        res.render("gerenciarProvidencias.ejs", {providencias:providencias, advogados:advogados})
+        var idAdvogadoVinculado
+
+        if(req.session.user){
+            idAdvogadoVinculado = req.session.user
+        }else{
+            idAdvogadoVinculado = 0
+        }
+        res.render("gerenciarProvidencias.ejs", {providencias:providencias, advogados:advogados, idAdvogadoVinculado:idAdvogadoVinculado })
     }
 
     async carregaPaginaAdvExecutor(req,res){
-        res.render("advExecutor.ejs")
+        var idAdvogadoVinculado
+        if(req.session.user){
+            idAdvogadoVinculado = req.session.user
+        }else{
+            idAdvogadoVinculado = 0
+        }
+        res.render("advExecutor.ejs", {idAdvogadoVinculado:idAdvogadoVinculado})
     }
 
     async carregaPaginaCadastrarProvidencias(req,res){
-        res.render("cadastrarProvidencias.ejs")
+        var idAdvogadoVinculado
+        if(req.session.user){
+            idAdvogadoVinculado = req.session.user
+        }else{
+            idAdvogadoVinculado = 0
+        }
+        res.render("cadastrarProvidencias.ejs", {idAdvogadoVinculado:idAdvogadoVinculado})
     }
     
 }

@@ -1,4 +1,5 @@
 var Advogados = require("../models/AdvogadosModel.js")
+const bcrypt = require("bcryptjs")
 
 class AdvogadosController{
     async mostraTodosAdvogados(req, res){
@@ -11,6 +12,38 @@ class AdvogadosController{
 
         }
 
+    }
+
+    async autenticarLogin(req, res){
+        try {
+            var emailLogin = req.body.emailLogin
+            var senhaLogin = req.body.senhaLogin
+            
+            var advogado = await Advogados.validacaoEmail(emailLogin)
+
+            if(advogado){
+/*                 var validacaoDeSenha = bcrypt.compareSync(senhaLogin, advogado.senha)
+ */    
+                if(senhaLogin == advogado.senha){
+                        req.session.user = {
+                        id: advogado.id,
+                        emai: advogado.email,
+                        nome: advogado.nomeCompleto
+                    }
+    
+                    res.redirect("/dashboard")
+                
+                }else{
+                    res.send("senha errada")
+                }
+            }else{
+                res.send("email nao cadastrado")
+            }
+            
+        } catch (error) {
+            console.log(error+" erro interno de servidor")
+            return
+        }
     }
 
 }

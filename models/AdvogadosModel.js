@@ -14,6 +14,22 @@ class Advogados{
         }
     }
 
+    async validacaoEmail(emailUsuario){
+        try {
+            var email = 
+            await knex.select("advogados.*").where("advogados.email", emailUsuario)
+            .table("advogados")
+            .first()
+
+            return email
+
+        } catch (error) {
+            console.log(error)
+            return []
+            
+        }
+    }
+
 
 
 }

@@ -17,6 +17,13 @@ io.on("connection", (socket) =>{
 
 app.set("view engine", "ejs")
 
+app.use(session({
+  secret: 'suaChaveSecreta', // Substitua por uma chave secreta mais segura
+  resave: false, // Não salva a sessão se ela não foi modificada
+  saveUninitialized: false, // Não salva sessões não inicializadas
+  cookie: { secure: false } // Defina como true se estiver usando HTTPS
+}));
+
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
@@ -50,7 +57,7 @@ const dom = new JSDOM(`
 const $ = jQuery(dom.window);
  
 app.get('/', (req, res) => {
-  res.render("index.ejs");
+  res.render("login.ejs");
 });
 
 
