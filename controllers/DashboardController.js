@@ -14,6 +14,10 @@ class DashboardController{
         res.render("dashboard.ejs", {idAdvogadoVinculado: idAdvogadoVinculado})
     }
 
+    async carregaPaginaCadastro(req, res){
+        res.render("cadastro.ejs")
+    }
+
     async carregaPaginaAnaliseDivergencia(req,res){
         var idAdvogadoVinculado
         if(req.session.user){
