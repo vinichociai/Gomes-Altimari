@@ -15,7 +15,7 @@
             <div class="icon-user mb-4 d-flex justify-content-center">
                 <i class="fas fa-user-circle fa-3x"></i> 
             </div>
-            <form>
+            <form onsubmit="return loginUser();">
                 <div class="mb-3">
                     <input type="email" class="form-control" id="emailID" placeholder="Email:" required>
                 </div>
@@ -29,11 +29,10 @@
                     </label>
                     <a href="#">Esqueceu a senha?</a>
                 </div>
-                 <button class="btn btn-primary" href="/dashboard">Entrar</button>
-                 <button class="btn btn-primary botao2" href="/cadastro">Cadastro</button>
+                 <button type="submit" class="btn btn-primary" href="/dashboard">Entrar</button>
+                 <a href="/cadastro" class="botao2">Cadastro</a>
             </form>
         </div>
     </div>
 </body>
-
 </html>

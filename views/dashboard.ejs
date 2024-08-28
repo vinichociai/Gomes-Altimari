@@ -61,9 +61,34 @@
                         <p class="card-text">Processo 34450400-05.2024.8.26.0083<br>ADV: CASSIANO RODRIGUES DA SILVA NETO (OAB 442913/SP)</p>
                         <span class="text-muted">12/06/2024</span>
                         <button class="btn btn-primary mt-2">Gerar Petição (i.a)</button>
-                        <button class="btn btn-primary mt-2" onclick="addTask()">HighQ</button>
+                        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#highQModal">
+                            HighQ
+                          </button>       
                     </div>
                 </div>
+                <!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="highQModal" tabindex="-1" aria-labelledby="highQModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="highQModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="linkForm">
+            <div class="mb-3">
+              <label for="linkInput" class="form-label">Digite o link:</label>
+              <input type="url" class="form-control" id="linkInput" placeholder="https://example.com" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar Link</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
                  <h5 class="text-success">Concluídas</h5>
                 <div class="card mb-2">
                     <div class="card-verde">
@@ -94,5 +119,13 @@
     </div>    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('linkForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const link = document.getElementById('linkInput').value;
+  localStorage.setItem('savedLink', link);
+  alert('Link salvo com sucesso: ' + link);
+});
+    </script>
 </body>
 </html>
