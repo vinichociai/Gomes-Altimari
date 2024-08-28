@@ -15,6 +15,10 @@
             </li>
             <span class="navbar-divider"></span>
             <li class="nav-item">
+                <a class="nav-link" href="/dashboard">Home</a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="/gerenciar-providencias">Gerenciar Providências</a>
             </li>
             <span class="navbar-divider"></span>
@@ -26,11 +30,20 @@
                 <a class="nav-link" href="/advExecutor">Petição</a>
             </li>
         </ul>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" style="margin-right: 50px; font-size: 22px;">
             <span class="navbar-divider"></span>
+
+            <%if(idAdvogadoVinculado != 0){%>
             <li class="nav-item">
-               <a class="nav-link" href="#">Ver todos os processos</a>
+               <a class="nav-link"> <%= idAdvogadoVinculado.nome %></a>
             </li>
+            <%} else{ %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Login</a>
+                 </li>
+            <%}%>
+
         </ul>
     </div>
 </nav>
+

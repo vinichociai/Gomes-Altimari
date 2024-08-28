@@ -53,3 +53,11 @@ a {
   text-decoration: none;
   color: #4a67e4;
 }
+
+.Cadastro {
+  background-color: #4a67e4;
+  border: none;
+  margin-left: 35%;
+  margin-top: 2%;
+  color: #fff;
+}

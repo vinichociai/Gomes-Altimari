@@ -12,6 +12,8 @@ module.exports = function(io) {
     router.get("/gerenciar-providencias", (req, res) => DashboardController.carregaPaginaGerenciarProvidencias(req, res, io));
     router.get("/advExecutor", (req, res) => DashboardController.carregaPaginaAdvExecutor(req, res, io));
     router.get("/cadastrar-providencias", (req, res) => DashboardController.carregaPaginaCadastrarProvidencias(req, res, io));
+    router.get("/visualizar-providencias", (req, res) => DashboardController.carregaPaginaVisualizarProvidencias(req, res, io));
+    router.get("/cadastro", (req, res) => DashboardController.carregaPaginacadastro(req, res, io));
     router.get("/cadastro", (req, res) => DashboardController.carregaPaginaCadastro(req, res, io));
 
     router.post("/analise-publicacao", (req, res) => AnalisePublicacaoController.analisePublicacao(req, res, io));
@@ -20,6 +22,9 @@ module.exports = function(io) {
     router.get("/advogados", (req, res) => AdvogadosController.mostraTodosAdvogados(req, res, io));
     router.get("/providencias", (req, res) => ProvidenciasController.listaTodasProvidencias(req,res))
     router.get("/providencias/filtro", (req, res) => ProvidenciasController.listaTodasProvidenciasFiltro(req,res))
+    router.post("/autenticarLogin", (req, res) => AdvogadosController.autenticarLogin(req,res))
+
+    router.delete("/providencia/:idProvidencia", (req, res) => ProvidenciasController.deletarProvidencia(req,res))
 
     return router;
 };
