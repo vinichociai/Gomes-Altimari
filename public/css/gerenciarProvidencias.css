@@ -1,6 +1,7 @@
 body {
   font-family: "Segoe UI", Arial, sans-serif; /* Fonte mais próxima ao design */
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .fa {
@@ -11,6 +12,10 @@ body {
   background-color: #012777;
   height: 100px; /* Ajuste a altura conforme necessário */
   position: relative;
+}
+
+h4 {
+  margin-left: 21%;
 }
 
 .custom-navbar .navbar-brand img.navbar-logo {
@@ -34,10 +39,8 @@ img {
 }
 
 .page-title {
-  text-align: left;
-  margin-top: 20px; /* Aumenta a margem superior */
-  margin-left: 100px; /* Aumenta a margem esquerda para mover para a direita */
-  font-size: 30px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .page-title2 {
@@ -243,149 +246,146 @@ img {
   }
 }
 
-
-#filtro .row{
-  margin:30px 44px 0px 44px
+#filtro .row {
+  margin: 30px 44px 0px 44px;
 }
 
-#filtro .row div{
-  margin-bottom: 15px;
+.plantacao {
+  padding-top: 25px;
+  background-color: #d9d9d956;
+  margin-bottom: 30px;
 }
 
-.plantacao{
-padding-top: 25px;
-background-color: #d9d9d956;
-margin-bottom: 30px;
-} 
-
-#cursos .containerPlantacaoDentro{
-height: 300px;
-
+#cursos .containerPlantacaoDentro {
+  height: 300px;
 }
 
-#cursos .imagem{
-width: 260px;
-height: 140px;
-text-align: center;
-margin: auto;
-border-radius: 0px;
+#cursos .imagem {
+  width: 260px;
+  height: 140px;
+  text-align: center;
+  margin: auto;
+  border-radius: 0px;
 }
 
-#cursos h3{
-font-size: 18px;
-text-align: start;
-margin-top: 5px;
-margin-bottom: 0px;
-color: black;
-
+#cursos h3 {
+  font-size: 18px;
+  text-align: start;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  color: black;
 }
-
 
 .progress-container {
-width: 100%;
-background-color: #f3f3f3;
-border-radius: 25px;
-padding: 0px;
-box-shadow: 0 1px 1px -2px #000, 0 1px 2px #333;
-margin: auto;
-margin-bottom: 15px;
-margin-top: 0;
-
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 25px;
+  padding: 0px;
+  box-shadow: 0 1px 1px -2px #000, 0 1px 2px #333;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 0;
 }
 
 .progress-bar {
-width: 0;
-height: 10px;
-background: linear-gradient(90deg, #4caf50, #8bc34a);
-border-radius: 25px;
-text-align: center;
-line-height: 20px;
-transition: width 0.5s;
+  width: 0;
+  height: 10px;
+  background: linear-gradient(90deg, #4caf50, #8bc34a);
+  border-radius: 25px;
+  text-align: center;
+  line-height: 20px;
+  transition: width 0.5s;
 }
 
-.progressBar{
-color: rgb(70, 69, 69);
-font-size: 8px;
-
+.progressBar {
+  color: rgb(70, 69, 69);
+  font-size: 8px;
 }
-#cursos p{
-color: #7b7979;
-text-align: start;
-font-size: 12px;
-margin-bottom: 10px;
-}
-
-#cursos .botao{
-margin-bottom: 0px;
+#cursos p {
+  color: #7b7979;
+  text-align: start;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
 
-#cursos .avaliacao{
-margin-top: 5px;
-text-align: center;
+#cursos .botao {
+  margin-bottom: 0px;
 }
 
-
-::selection{
-color: #fff;
-background: #664AFF;
+#cursos .avaliacao {
+  margin-top: 5px;
+  text-align: center;
 }
 
-.wrapperSearch{
-max-width: 450px;
-margin: 5px auto;
+::selection {
+  color: #fff;
+  background: #664aff;
 }
 
-.wrapperSearch .search-input{
-background: #fff;
-width: 100%;
-border-radius: 5px;
-position: relative;
-
-}
-.search-input input{
-height: 45px;
-width: 120%;
-outline: none;
-border: solid 0.5px #d9d9d9;
-border-radius: 5px;
-padding: 0 60px 0 20px;
-font-size: 15px;
-}
-.search-input.active input{
-border-radius: 5px 5px 5px 5px;
-}
-.search-input .autocom-box{
-padding: 0;
-opacity: 0;
-pointer-events: none;
-max-height: 220px;
-overflow-y: auto;
-}
-.search-input.active .autocom-box{
-padding: 10px 8px;
-opacity: 1;
-pointer-events: auto;
-}
-.autocom-box li{
-list-style: none;
-padding: 8px 12px;
-display: none;
-width: 100%;
-cursor: default;
-border-radius: 3px;
-}
-.search-input.active .autocom-box li{
-display: block;
-}
-.autocom-box li:hover{
-background: #efefef;
+.wrapperSearch {
+  max-width: 450px;
+  margin: 5px auto;
 }
 
+.wrapperSearch .search-input {
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+}
+.search-input input {
+  height: 45px;
+  width: 120%;
+  outline: none;
+  border: solid 0.5px #d9d9d9;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 15px;
+}
+.search-input.active input {
+  border-radius: 5px 5px 5px 5px;
+}
+.search-input .autocom-box {
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.search-input.active .autocom-box {
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.autocom-box li {
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+.search-input.active .autocom-box li {
+  display: block;
+}
+.autocom-box li:hover {
+  background: #efefef;
+}
 
-#providencias .row .col-4{
-  padding: 20px 40px;
-  background-color: #a6a3a3;
-  border-radius: 10px;
-  margin: 10px 10px;
-  width: 31%;
+#providencias .row {
+  display: flex;         /* Ativa o layout flexível */
+  justify-content: space-around; /* Espaçamento igual entre os itens */
+  align-items: center;   /* Alinha os itens verticalmente */
+  flex-wrap: wrap;       /* Permite que os itens envolvam em várias linhas se necessário */
+  margin: 20px 0;        /* Margem superior e inferior para separação dos outros elementos */
+}
+
+#providencias .col-4 {
+  flex: 0 0 31%;         /* Define a base de cada item para 31% e não permite crescimento ou encolhimento */
+  margin: 10px;          /* Espaço entre os itens */
+  padding: 20px;         /* Espaçamento interno para estética */
+  background-color: #a6a3a3; /* Cor de fundo */
+  border-radius: 10px;   /* Bordas arredondadas */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra para um efeito elevado */
+  text-align: center;    /* Alinha o texto ao centro */
 }

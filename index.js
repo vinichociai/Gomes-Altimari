@@ -34,6 +34,16 @@ app.use(express.static("public"))
 
 app.use("/", router)
 
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  // Aqui você faria a verificação com o banco de dados
+  // Simulação de sucesso:
+  if (email === 'user@example.com' && password === 'password123') {
+      res.json({ success: true });
+  } else {
+      res.json({ success: false, message: 'Credenciais inválidas!' });
+  }
+});
 
 
 
